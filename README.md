@@ -16,22 +16,6 @@ Unlike traditional element-hiding extensions that cause video streams to buffer 
 
 ---
 
-## Installation
-
-### Safari (iOS / iPadOS)
-1. Install the **Userscripts** extension from the App Store.
-2. Enable the extension in **Settings > Safari > Extensions**.
-3. Open Safari, tap the **Userscripts** extension icon, and set your local directory inside the **Files** app.
-4. Save the script file as `VideoPlayerAdDefuser.user.js` in that directory.
-5. Ensure the script toggle is active.
-
-### Firefox / Chrome / Edge (Desktop & Linux)
-1. Install a userscript manager such as **Violentmonkey** or **Tampermonkey**.
-2. Open the extension dashboard and click **Create a new script** (`+`).
-3. Paste the contents of `VideoPlayerAdDefuser.user.js` and save (**Ctrl + S** / **Cmd + S**).
-
----
-
 ## How It Works
 
 Modern video advertising relies on two primary channels: client-side SDK negotiation (such as Google IMA or FreeWheel) and video element swapping.
