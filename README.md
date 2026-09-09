@@ -37,23 +37,22 @@ Unlike traditional element-hiding extensions that cause video streams to buffer 
 Modern video advertising relies on two primary channels: client-side SDK negotiation (such as Google IMA or FreeWheel) and video element swapping.
 
 [Video Player Request]
-                        |
-             +----------+----------+
-             |                     |
-      (Ad Tag / VAST)   (Media Stream: .m3u8 / .ts)
-             |                     |
-    [Intercept & Serve]            |
-    [  Empty VAST XML ]            |
-             |                     v
-             +-------------> [Video Element]
-                                   |
-                   (Is Duration <= 35s or Ad Wrapper?)
-                                 /   \
-                               YES    NO
-                               /        \
-                [Mute, 16x Speed,      [Normal Playback]
-                   Seek to End]
-
+                            |
+                 +----------+----------+
+                 |                     |
+          (Ad Tag / VAST)   (Media Stream: .m3u8 / .ts)
+                 |                     |
+        [Intercept & Serve]            |
+        [  Empty VAST XML ]            |
+                 |                     v
+                 +-------------> [Video Element]
+                                       |
+                       (Is Duration <= 35s or Ad Wrapper?)
+                                     /   \
+                                   YES    NO
+                                   /        \
+                    [Mute, 16x Speed,      [Normal Playback]
+                       Seek to End]
 
 1. **Network Interception:** Injected at `document-start`, the script proxies `window.fetch` and `XMLHttpRequest.prototype`. When an ad tag is requested, the script returns a synthetic `200 OK` response with empty VAST XML.
 2. **Prototype Hooking:** Modifies `HTMLMediaElement.prototype.play` to inspect targets before playback starts.
