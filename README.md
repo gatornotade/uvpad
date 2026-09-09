@@ -1,4 +1,4 @@
-#Universal Video Player Ad Defuser
+# Universal Video Player Ad Defuser
 
 A lightweight, high-performance userscript designed to neutralize in-stream video advertisements, pre-rolls, and mid-rolls across modern web players. 
 
